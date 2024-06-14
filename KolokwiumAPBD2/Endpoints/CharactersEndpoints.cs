@@ -29,7 +29,7 @@ public static class CharactersEndpoints
         {
             if (data.ItemsId.Count <= 0)
             {
-                return Results.NotFound("Array must have at least 1 element");
+                return Results.BadRequest("Array must have at least 1 element");
             }
             
             try
@@ -39,15 +39,15 @@ public static class CharactersEndpoints
             }
             catch (NotFoundException e)
             {
-                return Results.NotFound(e.Message);
+                return Results.BadRequest(e.Message);
             }
             catch (NotFoundCharacterException e)
             {
-                return Results.NotFound(e.Message);
+                return Results.BadRequest(e.Message);
             }
             catch (NotEnoughWeightException e)
             {
-                return Results.NotFound(e.Message);
+                return Results.BadRequest(e.Message);
             }
         });
     }
