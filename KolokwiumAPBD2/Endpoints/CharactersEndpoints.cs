@@ -10,11 +10,11 @@ public static class CharactersEndpoints
     {
         var group = builder.MapGroup("characters");
         
-        group.MapGet("{id:int}", async (int id, ICharacterService service) =>
+        group.MapGet("{characterId:int}", async (int characterId, ICharacterService service) =>
         {
             try
             {
-                return Results.Ok(await service.GetCharacterByIdAsync(id));
+                return Results.Ok(await service.GetCharacterByIdAsync(characterId));
             }
             catch (NotFoundException e)
             {
