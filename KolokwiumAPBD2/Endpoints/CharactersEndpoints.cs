@@ -18,7 +18,7 @@ public static class CharactersEndpoints
             }
             catch (NotFoundException e)
             {
-                return Results.BadRequest(e.Message);
+                return Results.NotFound(e.Message);
             }
         });
         
@@ -39,11 +39,11 @@ public static class CharactersEndpoints
             }
             catch (NotFoundException e)
             {
-                return Results.BadRequest(e.Message);
+                return Results.NotFound(e.Message);
             }
             catch (NotFoundCharacterException e)
             {
-                return Results.BadRequest(e.Message);
+                return Results.NotFound(e.Message);
             }
             catch (NotEnoughWeightException e)
             {
