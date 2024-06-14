@@ -18,7 +18,7 @@ public static class CharactersEndpoints
             }
             catch (NotFoundException e)
             {
-                return Results.NotFound(e.Message);
+                return Results.BadRequest(e.Message);
             }
         });
         
